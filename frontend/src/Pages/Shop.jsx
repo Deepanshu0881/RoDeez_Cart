@@ -11,10 +11,10 @@ const Shop = () => {
   const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('http://localhost:4000/newcollections') 
+    fetch('https://ro-deez-backend.onrender.com/newcollections') 
     .then((res) => res.json()) 
     .then((data) => setNewCollection(data))
-    fetch('http://localhost:4000/popular') 
+    fetch('https://ro-deez-backend.onrender.com/popular') 
     .then((res) => res.json()) 
     .then((data) => setPopular(data))
   }
