@@ -1,0 +1,16 @@
+.Company-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .Company-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .Company-description {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
