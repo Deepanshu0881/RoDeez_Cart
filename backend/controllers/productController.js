@@ -16,6 +16,12 @@ const getNewCollections = async (req, res) => {
 
 const getPopularProducts = async (req, res) => {
   let products = await Product.find({});
+  
+  // Fisher-Yates Shuffle to randomize the products array
+  for (let i = products.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [products[i], products[j]] = [products[j], products[i]];
+  }
   let arr = products.slice(1, 9);
   console.log("Popular");
   res.send(arr);
@@ -49,8 +55,16 @@ const removeFromCart = async (req, res) => {
 
 const getCart = async (req, res) => {
   console.log("Get Cart");
-  let userData = await User.findOne({ _id: req.user.id });
-  res.json(userData.cartData);
+  try {
+    let userData = await User.findOne({ _id: req.user.id });
+    if (!userData) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json(userData.cartData);
+  } catch (error) {
+    console.error("Error fetching cart data:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
 };
 
 const addProduct = async (req, res) => {

@@ -10,8 +10,8 @@ import mobile_banner from "./Components/Assets/mobile_banner.jpg";
 import laptop_banner from "./Components/Assets/laptop_banner.jpg";
 import gadgets_banner2 from "./Components/Assets/gadgets_banner.png";
 import LoginSignup from "./Pages/LoginSignup";
-export const backend_url = 'https://ro-deez-backend.onrender.com';
-// export const backend_url = 'http://localhost:4000';
+// export const backend_url = 'https://ro-deez-backend.onrender.com';
+export const backend_url = 'http://localhost:4000';
 export const currency = '₹';
 
 function App() {

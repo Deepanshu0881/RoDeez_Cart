@@ -1,19 +1,36 @@
-import React from 'react'
-import './Item.css'
-import { Link } from 'react-router-dom'
-import { backend_url, currency } from '../../App'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { currency } from '../../App';
+import './Item.css';
 
 const Item = (props) => {
   return (
-    <div className='item'>
-      <Link to={`/product/${props.id}`}><img onClick={window.scrollTo(0, 0)} src={backend_url+props.image} alt="products" />
-      <p>{props.name}</p></Link>
-      <div className="item-prices">
-        <div className="item-price-new">{currency}{props.new_price}</div>
-        <div className="item-price-old">{currency}{props.old_price}</div>
-      </div>
-    </div>
-  )
+    <Card className='item'>
+      <CardActionArea component={Link} to={`/product/${props.id}`} onClick={() => window.scrollTo(0, 0)}>
+        <CardMedia
+          component="img"
+          height="140"
+          image={props.image}
+          alt={props.name}
+          sx={{ objectFit: 'contain' }}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h6" component="div">
+            {props.name}
+          </Typography>
+          <div className="item-prices">
+            <Typography variant="body2" color="text.primary" className="item-price-new">
+              {currency}{props.new_price}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" className="item-price-old">
+              {currency}{props.old_price}
+            </Typography>
+          </div>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
 }
 
 export default Item;

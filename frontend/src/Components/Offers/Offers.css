@@ -35,7 +35,7 @@
     cursor: pointer;
 }
 .offers-right img{
-    width: 320px;
+    width: 250px;
     padding-top: 20px;
 }
 
@@ -43,7 +43,7 @@
 
 @media(max-width:1280px){
     .offers-right img{
-        width: 300px;
+        width: 250px;
     }
     .offers-left h1{
         font-size: 40px;
