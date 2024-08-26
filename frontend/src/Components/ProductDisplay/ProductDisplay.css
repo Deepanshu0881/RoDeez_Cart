@@ -186,10 +186,10 @@
     }
 
     .productdisplay-img-list img {
-        height: 68px;
+        height: 0px;
     }
 
     .productdisplay-main-img {
-        height: 300px;
+        height: 200px;
     }
 }

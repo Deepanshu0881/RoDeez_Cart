@@ -16,9 +16,12 @@ const Item = (props) => {
           sx={{ objectFit: 'contain' }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h6" component="div">
-            {props.name}
+        <div className='item-heading'>
+          <Typography gutterBottom variant="h6" className='item-name'>
+            {props.name.length > 25 ? `${props.name.substring(0, 25)}...` : props.name}
           </Typography>
+        </div>
+
           <div className="item-prices">
             <Typography variant="body2" color="text.primary" className="item-price-new">
               {currency}{props.new_price}

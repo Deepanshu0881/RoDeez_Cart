@@ -66,6 +66,7 @@
 @media (max-width:800px) {
     .shopcategory-banner{
         width: 95%;
+        padding-top: 40px;
     }
      .shopcategory-loadmore{
         margin: 60px auto;

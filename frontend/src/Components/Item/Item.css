@@ -7,11 +7,16 @@
     .item:hover{
     transform: scale(1.05);
     transition: 0.6s;
+    /* background-color: #e6e6e6; */
     }
 
   .item .MuiCardMedia-root {
     object-fit: contain;
   }
+
+  /* .item-name{
+    
+  } */
   
   .item-prices {
     display: flex;
@@ -44,10 +49,7 @@
   
   @media (max-width: 500px) {
     .item p {
-      font-size: 14px;
-    }
-    .item-price-new {
-      font-size: 14px;
+      font-size: 10px;
     }
   }
   
