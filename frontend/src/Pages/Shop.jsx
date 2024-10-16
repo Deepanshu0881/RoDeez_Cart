@@ -4,6 +4,7 @@ import Popular from '../Components/Popular/Popular'
 import Offers from '../Components/Offers/Offers'
 import NewCollections from '../Components/NewCollections/NewCollections'
 import NewsLetter from '../Components/NewsLetter/NewsLetter'
+import { backend_url } from "../App";
 
 const Shop = () => {
 
@@ -11,10 +12,10 @@ const Shop = () => {
   const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('https://ro-deez-backend.onrender.com/newcollections') 
+    fetch(`${backend_url}/newcollections`) 
     .then((res) => res.json()) 
     .then((data) => setNewCollection(data))
-    fetch('https://ro-deez-backend.onrender.com/popular') 
+    fetch(`${backend_url}/popular`) 
     .then((res) => res.json()) 
     .then((data) => setPopular(data))
   }
